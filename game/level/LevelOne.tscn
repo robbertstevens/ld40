@@ -56,8 +56,16 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="spawn" type="Position2D" parent="RoomOne"]
+[node name="spawn" type="Position2D" parent="RoomOne" groups=[
+"spawn",
+]]
 
 transform/pos = Vector2( -9.51724, 278.389 )
+
+[node name="spawn1" type="Position2D" parent="RoomOne" groups=[
+"spawn",
+]]
+
+transform/pos = Vector2( 184, -8.99998 )
 
 
