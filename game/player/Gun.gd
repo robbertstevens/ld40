@@ -1,12 +1,8 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var delay = 3000
+var delay = .01 # secconds
 var last_shot = 0
-var speed = 100
-onready var bullet_scene = preload("res://Gun.tscn")
+onready var bullet_scene = preload("res://player/Bullet.tscn")
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -20,8 +16,8 @@ func _process(delta):
 	if (shoot && Input.is_mouse_button_pressed(BUTTON_LEFT)):
 		var bullet = bullet_scene.instance()
 		bullet.set_pos(get_pos())
-		add_child(bullet)
 		last_shot = delay
+		add_child(bullet)
 	
 		
 		
