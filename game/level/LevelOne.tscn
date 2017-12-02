@@ -5,7 +5,7 @@
 [ext_resource path="res://level/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -18,7 +18,7 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -31,21 +31,20 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 
 font/size = 12
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 120, 168 )
 
 [node name="Level" type="Node2D"]
 
-transform/pos = Vector2( 144, 96 )
 script/script = ExtResource( 1 )
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -66,8 +65,8 @@ margin/left = -1.0
 margin/top = -1.0
 margin/right = 119.0
 margin/bottom = 23.0
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -87,7 +86,7 @@ margin/left = 0.0
 margin/top = -1.0
 margin/right = 120.0
 margin/bottom = 24.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.957031, 0.915909, 0.915909, 1 )
 text = "Health"
 align = 1
@@ -126,7 +125,7 @@ transform/pos = Vector2( 122.094, 60.2935 )
 
 transform/pos = Vector2( 79.9999, 33 )
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 88.0001, 135 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -137,7 +136,7 @@ angular_damp = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOne"]
 
 transform/pos = Vector2( 88.0001, 135 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
