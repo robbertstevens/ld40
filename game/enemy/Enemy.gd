@@ -7,7 +7,9 @@ func _ready():
 	set_fixed_process(true)
 
 func _fixed_process(delta):
-	path = get_node("../Navigation2D").get_simple_path(get_global_pos(), get_node("../Player").get_global_pos())
+	var navigation = get_tree().get_root().get_node("Level/Navigation")
+	var player = get_tree().get_root().get_node("Level/Player")
+	path = navigation.get_simple_path(get_global_pos(), player.get_global_pos())
 	
 	if path.size() > 1:
 		var distance = path[1] - get_global_pos()

@@ -12,7 +12,6 @@ extents = Vector2( 4.875, 4.875 )
 "player",
 ]]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 4.92308, 0, 0, 4.92308, 3.8147e-06, 3.8147e-06 )
