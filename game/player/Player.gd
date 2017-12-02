@@ -15,6 +15,9 @@ const DECELERATION = 5000
 var speed = Vector2()
 var velocity = Vector2()
 
+var ammo = 10
+var health = 100
+
 func _ready():
 	set_process(true)
 	sprite_node = get_node("Sprite")

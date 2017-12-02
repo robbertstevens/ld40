@@ -43,7 +43,6 @@ transform/pos = Vector2( 122.094, 60.2935 )
 "room",
 ]]
 
-editor/display_folded = true
 transform/pos = Vector2( 79.9999, 33 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
