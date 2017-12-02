@@ -1,6 +1,6 @@
 extends Node2D
 
-var delay = .5 # secconds
+var delay = .1 # secconds
 var last_shot = 0
 onready var bullet_scene = preload("res://player/Bullet.tscn")
 

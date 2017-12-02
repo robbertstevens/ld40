@@ -8,9 +8,10 @@ var health = 100
 func _ready():
 	set_fixed_process(true)
 	sprite_node = get_node("Sprite")
+	get_node("ProgressBar").set_max(health)
 
 func _fixed_process(delta):
-	
+	get_node("ProgressBar").set_value(health)
 	if (health < 0):
 		queue_free()
 	
