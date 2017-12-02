@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://level/LevelOne.gd" type="Script" id=1]
 [ext_resource path="res://level/assets/SPACEMAN.TTF" type="DynamicFontData" id=2]
@@ -34,6 +34,13 @@ draw_bg = true
 [sub_resource type="DynamicFont" id=3]
 
 font/size = 12
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+
+font/size = 16
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
@@ -90,6 +97,46 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.957031, 0.915909, 0.915909, 1 )
 text = "Health"
 align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AmmoLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -1.0
+margin/top = 23.0
+margin/right = 95.0
+margin/bottom = 47.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "ammo:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AmmoValueLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 95.0
+margin/top = 23.0
+margin/right = 191.0
+margin/bottom = 47.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.487061, 0.875, 0.0991211, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "10"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
