@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/assets/player.png" type="Texture" id=2]
+[ext_resource path="res://player/Gun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,11 +22,20 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." groups=[
+"player",
+]]
 
 texture = ExtResource( 2 )
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Gun" parent="Sprite" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 0, 40 )
+transform/scale = Vector2( 0.1, 0.1 )
+
+[node name="Collision" type="CollisionShape2D" parent="." groups=[
+"player",
+]]
 
 transform/pos = Vector2( 3.8147e-06, 3.8147e-06 )
 transform/scale = Vector2( 4.92308, 4.92308 )
@@ -33,12 +43,14 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=[
+"player",
+]]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -47,9 +59,9 @@ drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = false
 smoothing/speed = 5.0
-drag_margin/left = 0.1
-drag_margin/top = 0.1
-drag_margin/right = 0.1
-drag_margin/bottom = 0.1
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 

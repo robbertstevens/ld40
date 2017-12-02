@@ -5,18 +5,27 @@ extends KinematicBody2D
 # var b = "textvar"
 
 var speed = 1000 #speed of the bullet
+var direction = Vector2()
 var target = Vector2()
 var motion = Vector2()
+var damage = 5
+
+
 
 func _ready():
-	set_fixed_process(true)
-	target = get_viewport().get_mouse_pos()
+	set_process(true)
+	target =  - get_pos()
 	
-func _fixed_process(delta):
-	motion = target.normalized() * speed * delta
+func _process(delta):
+	motion = direction * speed * delta
 	move(motion)
 	
 	if is_colliding():
 		var collider = get_collider()
+		
+		if collider.is_in_group("enemy"):
+			collider.health -= damage
+			
 		if not collider.is_in_group("player"):
-			collider.queue_free()
+			queue_free()
+		
