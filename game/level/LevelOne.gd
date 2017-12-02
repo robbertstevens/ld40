@@ -36,6 +36,10 @@ func _process(delta):
 	var ammoValue = get_tree().get_root().get_node("Level/UI/AmmoValueLabel")
 	ammoValue.set_text(str(player.ammo))
 	
+	# Score update
+	var scoreValue = get_tree().get_root().get_node("Level/UI/ScoreValueLabel")
+	scoreValue.set_text(str(player.score))
+	
 	
 
 func _enter_roomOne(body, room):

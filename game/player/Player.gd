@@ -17,6 +17,7 @@ var velocity = Vector2()
 
 var ammo = 10
 var health = 99
+var score = 0
 
 func _ready():
 	set_process(true)

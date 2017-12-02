@@ -142,6 +142,46 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="ScoreLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 791.0
+margin/top = -1.0
+margin/right = 887.0
+margin/bottom = 23.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "score:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ScoreValueLabel" type="Label" parent="UI"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 887.0
+margin/top = -1.0
+margin/right = 983.0
+margin/bottom = 23.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.703125, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "10"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Navigation" type="Navigation2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Navigation"]
