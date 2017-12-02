@@ -8,7 +8,7 @@ var x_direction = 0
 var input_y_direction = 0
 var y_direction = 0
 
-const MAX_SPEED = 700
+const MAX_SPEED = 200
 const ACCELERATION = 2600
 const DECELERATION = 5000
 
