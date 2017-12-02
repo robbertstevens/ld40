@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://level/LevelOne.gd" type="Script" id=1]
 [ext_resource path="res://level/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 120, 168 )
+
+[node name="Level" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
@@ -29,5 +34,30 @@ tile_data = IntArray( -589819, -1073741821, -589818, 2, -589817, 2, -589816, 2, 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 122.094, 60.2935 )
+
+[node name="RoomOne" type="Area2D" parent="." groups=[
+"room",
+]]
+
+transform/pos = Vector2( 79.9999, 33 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 88.0001, 135 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOne"]
+
+transform/pos = Vector2( 88.0001, 135 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="spawn" type="Position2D" parent="RoomOne"]
+
+transform/pos = Vector2( -9.51724, 278.389 )
 
 
