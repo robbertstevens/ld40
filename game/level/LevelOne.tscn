@@ -13,7 +13,11 @@ extents = Vector2( 120, 168 )
 
 script/script = ExtResource( 1 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Navigation" type="Navigation2D" parent="."]
+
+editor/display_folded = true
+
+[node name="TileMap" type="TileMap" parent="Navigation"]
 
 mode = 0
 tile_set = ExtResource( 2 )
@@ -56,8 +60,16 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="spawn" type="Position2D" parent="RoomOne"]
+[node name="spawn" type="Position2D" parent="RoomOne" groups=[
+"spawn",
+]]
 
 transform/pos = Vector2( -9.51724, 278.389 )
+
+[node name="spawn1" type="Position2D" parent="RoomOne" groups=[
+"spawn",
+]]
+
+transform/pos = Vector2( 184, -8.99998 )
 
 
