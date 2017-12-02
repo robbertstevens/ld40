@@ -25,6 +25,13 @@ func _process(delta):
 	time_elapsed = OS.get_unix_time()
 	if Input.is_action_pressed("key_exit"):
 		get_tree().quit()
+		
+	# Healt update
+	var player = get_tree().get_root().get_node("Level/Player")
+	var healthBar = get_tree().get_root().get_node("Level/UI/HealthBar")
+	
+	healthBar.set_value(player.health)
+	
 
 func _enter_roomOne(body, room):
 	if body.is_in_group("player"):
