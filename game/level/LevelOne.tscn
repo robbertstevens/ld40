@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://level/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemy/Enemy.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Navigation2D" type="Navigation2D" parent="."]
 
+[node name="TileMap" type="TileMap" parent="Navigation2D"]
+
+visibility/behind_parent = true
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 48, 48 )
-cell/quadrant_size = 16
+cell/quadrant_size = 48
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 cell/half_offset = 2
 cell/tile_origin = 0
@@ -26,5 +31,10 @@ tile_data = IntArray( -589819, -1073741821, -589818, 2, -589817, 2, -589816, 2, 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 122.094, 60.2935 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 590.374, -53.5725 )
+script/script = ExtResource( 4 )
 
 
