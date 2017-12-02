@@ -5,15 +5,19 @@ extends KinematicBody2D
 # var b = "textvar"
 
 var speed = 1000 #speed of the bullet
+var direction = Vector2()
 var target = Vector2()
 var motion = Vector2()
 
+
+
 func _ready():
 	set_process(true)
-	target = get_local_mouse_pos()
+	
+	target =  - get_pos()
 	
 func _process(delta):
-	motion = target.normalized() * speed * delta
+	motion = direction * speed * delta
 	move(motion)
 	
 	if is_colliding():

@@ -15,9 +15,10 @@ func _process(delta):
 	var shoot = last_shot <= 0
 	if (shoot && Input.is_mouse_button_pressed(BUTTON_LEFT)):
 		var bullet = bullet_scene.instance()
-		bullet.set_pos(get_pos())
+		bullet.direction = (get_global_pos() - get_tree().get_root().get_node("Level/Player").get_pos()).normalized()
+		bullet.set_pos(get_global_pos())
 		last_shot = delay
-		add_child(bullet)
+		get_tree().get_root().add_child(bullet)
 	
 		
 		

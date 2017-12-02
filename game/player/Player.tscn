@@ -13,7 +13,6 @@ extents = Vector2( 4.875, 4.875 )
 "player",
 ]]
 
-transform/pos = Vector2( -0.487671, 0.487679 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 4.92308, 0, 0, 4.92308, 3.8147e-06, 3.8147e-06 )
@@ -28,6 +27,11 @@ script/script = ExtResource( 1 )
 ]]
 
 texture = ExtResource( 2 )
+
+[node name="Gun" parent="Sprite" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 0, 40 )
+transform/scale = Vector2( 0.1, 0.1 )
 
 [node name="Collision" type="CollisionShape2D" parent="." groups=[
 "player",
@@ -46,7 +50,7 @@ _update_shape_index = 0
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -55,13 +59,9 @@ drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = false
 smoothing/speed = 5.0
-drag_margin/left = 0.1
-drag_margin/top = 0.1
-drag_margin/right = 0.1
-drag_margin/bottom = 0.1
-
-[node name="Gun" parent="." groups=[
-"player",
-] instance=ExtResource( 3 )]
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 
