@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/player.png" type="Texture" id=2]
 [ext_resource path="res://player/Gun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://player/shot.png" type="Texture" id=4]
-[ext_resource path="res://player/assets/footsteps.wav" type="Sample" id=5]
+[ext_resource path="res://player/assets/footsteps.wav" type="Sample" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -17,24 +16,7 @@ samples/footsteps = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 5 )
-}
-
-[sub_resource type="Animation" id=3]
-
-resource/name = "fire"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite/shot:visibility/opacity")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 0.1, 0.2 ),
-"transitions": FloatArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0, 0.0 ]
+"sample": ExtResource( 4 )
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -61,12 +43,6 @@ texture = ExtResource( 2 )
 transform/pos = Vector2( 0, 40 )
 transform/scale = Vector2( 0.1, 0.1 )
 
-[node name="shot" type="Sprite" parent="Sprite"]
-
-visibility/opacity = 0.0
-transform/pos = Vector2( -8.83562, 22.4222 )
-texture = ExtResource( 4 )
-
 [node name="Collision" type="CollisionShape2D" parent="." groups=[
 "player",
 ]]
@@ -84,7 +60,7 @@ _update_shape_index = 0
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.5, 0.5 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -114,16 +90,5 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
-
-[node name="Animation" type="AnimationPlayer" parent="."]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/fire = SubResource( 3 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
 
 
