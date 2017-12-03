@@ -1,22 +1,31 @@
 extends KinematicBody2D
 
 var path = []
-var speed = 50
+var speed = 100
 var sprite_node
 var health = 100
+var damage = 5
+var last_shot = 0
+var delay = 0.5
+var player
+var navigation
 
 func _ready():
 	set_fixed_process(true)
 	sprite_node = get_node("Sprite")
-	get_node("ProgressBar").set_max(health)
+	player = get_tree().get_root().get_node("Level/Player")
+	navigation = get_tree().get_root().get_node("Level/Navigation")
 
 func _fixed_process(delta):
-	get_node("ProgressBar").set_value(health)
+	
 	if (health < 0):
 		queue_free()
+
+	last_shot -= delta
+	if ((player.get_pos() - get_pos()).length() < 44 && last_shot <= 0):
+		player.health -= 5
+		last_shot = delay
 	
-	var navigation = get_tree().get_root().get_node("Level/Navigation")
-	var player = get_tree().get_root().get_node("Level/Player")
 	path = navigation.get_simple_path(get_global_pos(), player.get_global_pos())
 	
 	if path.size() > 1:

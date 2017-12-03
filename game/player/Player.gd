@@ -17,12 +17,16 @@ var velocity = Vector2()
 
 var ammo = 10
 var health = 99
+var score = 0
 
 func _ready():
 	set_process(true)
 	sprite_node = get_node("Sprite")
 	
 func _process(delta):
+	if (health < 0):
+		get_tree().reload_current_scene()
+	
 	# X movement
 	if input_x_direction:
 		x_direction = input_x_direction

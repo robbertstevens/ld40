@@ -38,6 +38,15 @@ func _process(delta):
 	
 	healthBar.set_value(player.health)
 	
+	# Ammo update
+	var ammoValue = get_tree().get_root().get_node("Level/UI/AmmoValueLabel")
+	ammoValue.set_text(str(player.ammo))
+	
+	# Score update
+	var scoreValue = get_tree().get_root().get_node("Level/UI/ScoreValueLabel")
+	scoreValue.set_text(str(player.score))
+	
+	
 
 func _enter_roomOne(body, room):
 	if body.is_in_group("player"):
