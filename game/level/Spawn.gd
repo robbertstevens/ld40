@@ -28,7 +28,7 @@ func _process(delta):
 		active_sounds[0] = sounds.play("portalactive")
 
 func spawn_enemies(to_spawn_point, wave_number):
-	spawn_enemy_count = floor(wave_number * difficulty_modifier)
+	spawn_enemy_count = clamp(floor(wave_number * difficulty_modifier), 0, 10)
 	difficulty = wave_number
 	
 	# start timer to spawn enemy
@@ -42,7 +42,6 @@ func spawn_enemies(to_spawn_point, wave_number):
 	
 func _spawn_enemy():
 	var ran = round(rand_range(0,3))
-	print(ran)
 	var enemy = enemy_scene.instance()
 	if ran == 0:
 		enemy = enemy_scene.instance()

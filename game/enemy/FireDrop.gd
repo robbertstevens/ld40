@@ -1,6 +1,6 @@
-extends StaticBody2D
+extends Area2D
 
-var alive_time = 5
+var alive_time = 3
 
 func _ready(): 
 	set_process(true)
@@ -10,3 +10,6 @@ func _process(delta):
 	
 	if alive_time < 0:
 		queue_free()
+	
+func get_damage():
+	return 1

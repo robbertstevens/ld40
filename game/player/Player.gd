@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var sprite_node
+var animation
 
 var input_x_direction = 0
 var x_direction = 0
@@ -22,11 +23,12 @@ var score = 0
 func _ready():
 	set_process(true)
 	sprite_node = get_node("Sprite")
+	animation = get_node("Animation")
 	
 func _process(delta):
 	if (health < 0):
 		get_tree().get_root().get_node("Level/Ui").game_over()
-	
+
 	# X movement
 	if input_x_direction:
 		x_direction = input_x_direction
@@ -68,12 +70,19 @@ func _process(delta):
 	velocity = Vector2(speed.x * delta * x_direction, speed.y * delta * y_direction)
 	var movement_remainder = move(velocity)
 	
+	
+	if (input_x_direction or input_y_direction) and not animation.is_playing():
+		animation.play("walk")
+	if not (input_x_direction or input_y_direction):
+		animation.stop()
+ 
 	if is_colliding():
 		var normal = get_collision_normal()
 		var final_movement = normal.slide(movement_remainder)
 		speed = normal.slide(speed)
 		move(final_movement)
-	
+		var c = get_collider()
+
 	# sprite direction
 	var mouse_pos = get_local_mouse_pos()
 	var angle = atan2(mouse_pos.x, mouse_pos.y)

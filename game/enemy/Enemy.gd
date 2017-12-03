@@ -37,7 +37,11 @@ func _fixed_process(delta):
 
 	last_shot -= delta
 	if ((player.get_pos() - get_pos()).length() < 44 && last_shot <= 0):
-		player.health -= 5
+		player.health -= get_damage()
+		last_shot = delay
+	
+	if ((generator.get_pos() - get_pos()).length() < 100 && last_shot <= 0):
+		generator.add_damage(20)
 		last_shot = delay
 	
 	if !chasing && (get_pos() - player.get_pos()).length() < 200:
@@ -66,3 +70,6 @@ func _fixed_process(delta):
 		var final_movement = normal.slide(movement_remainder)
 		final_movement = speed * delta * final_movement
 		move(final_movement)
+		
+func get_damage():
+	return 5
