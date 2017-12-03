@@ -38,7 +38,7 @@ func spawn_enemies(to_spawn_point, wave_number):
 	
 func _spawn_enemy():
 	var enemy = enemy_scene.instance()
-	enemy.health *= (difficulty_modifier ^ difficulty)
+	enemy.health *= pow(difficulty_modifier, difficulty)
 	enemy.set_pos(get_global_pos())
 	get_tree().get_root().get_node("Level").add_child(enemy)
 	spawn_enemy_count -= 1
