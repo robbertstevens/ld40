@@ -1,8 +1,9 @@
 extends "Enemy.gd"
 
 func _ready():
+	speed = 300
 	._ready()
-	speed = 250
+	
 
 
 func get_damage():
