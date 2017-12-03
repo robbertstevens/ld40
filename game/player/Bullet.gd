@@ -11,11 +11,12 @@ var motion = Vector2()
 var max_damage = 100
 
 func _ready():
+	set_rot(direction.angle() + PI / 2)
 	set_process(true)
 	
 func _process(delta):
 	motion = direction.normalized() * speed * delta
-	set_global_rotd(direction.angle())
+	
 	move(motion)
 	
 	if is_colliding():
