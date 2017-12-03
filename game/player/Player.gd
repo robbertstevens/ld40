@@ -73,7 +73,9 @@ func _process(delta):
 		var final_movement = normal.slide(movement_remainder)
 		speed = normal.slide(speed)
 		move(final_movement)
-	
+		var c = get_collider()
+		
+		print(c)
 	# sprite direction
 	var mouse_pos = get_local_mouse_pos()
 	var angle = atan2(mouse_pos.x, mouse_pos.y)

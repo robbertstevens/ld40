@@ -30,4 +30,7 @@ func has_near_fire():
 		if (get_pos() - fire.get_pos()).length() < 5:
 			return true
 	
-	return false	
+	return false
+
+func get_damage():
+	return 25
