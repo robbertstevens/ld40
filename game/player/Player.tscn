@@ -5,7 +5,7 @@
 [ext_resource path="res://player/Gun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/assets/footsteps.wav" type="Sample" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4.875, 4.875 )
@@ -24,10 +24,10 @@ samples/footsteps = {
 ]]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 4.92308, 0, 0, 4.92308, 3.8147e-06, 3.8147e-06 )
 shapes/0/trigger = false
-collision/layers = 1
+collision/layers = 65
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
@@ -49,7 +49,7 @@ transform/scale = Vector2( 0.1, 0.1 )
 
 transform/pos = Vector2( 3.8147e-06, 3.8147e-06 )
 transform/scale = Vector2( 4.92308, 4.92308 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
