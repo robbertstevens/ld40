@@ -1,6 +1,6 @@
 extends Area2D
 
-var alive_time = 5
+var alive_time = 3
 
 func _ready(): 
 	set_process(true)
