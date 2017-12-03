@@ -9,6 +9,8 @@ var last_shot = 0
 var delay = 0.5
 var player
 var navigation
+var lootbox_scene = preload("res://lootbox/Lootbox.tscn")
+var lootbox_spawned = false
 
 func _ready():
 	set_fixed_process(true)
@@ -18,7 +20,12 @@ func _ready():
 
 func _fixed_process(delta):
 	
-	if (health < 0):
+	if (health <= 0):
+		if (!lootbox_spawned):
+			lootbox_spawned = true
+			var lootbox = lootbox_scene.instance()
+			lootbox.set_global_pos(get_global_pos())
+			get_tree().get_root().get_node("Level").add_child(lootbox)
 		queue_free()
 
 	last_shot -= delta

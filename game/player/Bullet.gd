@@ -17,7 +17,8 @@ func _ready():
 	target =  - get_pos()
 	
 func _process(delta):
-	motion = direction * speed * delta
+	motion = direction.normalized() * speed * delta
+	rotate(atan2(direction.x, direction.y))
 	move(motion)
 	
 	if is_colliding():
@@ -33,5 +34,4 @@ func get_damage():
 	var ammo = get_tree().get_root().get_node("Level/Player").ammo
 	var dmg = max_damage - ammo
 	dmg = clamp(dmg, 1, 100)
-	print(dmg)
 	return dmg;
