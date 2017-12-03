@@ -17,8 +17,8 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 4.92308, 0, 0, 4.92308, 3.8147e-06, 3.8147e-06 )
 shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
+collision/layers = 3
+collision/mask = 3
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 
@@ -26,6 +26,7 @@ script/script = ExtResource( 1 )
 "player",
 ]]
 
+editor/display_folded = true
 texture = ExtResource( 2 )
 
 [node name="Gun" parent="Sprite" instance=ExtResource( 3 )]

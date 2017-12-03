@@ -38,14 +38,14 @@ font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 
 font/size = 16
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 120, 168 )
@@ -112,7 +112,7 @@ margin/left = -1.0
 margin/top = 23.0
 margin/right = 95.0
 margin/bottom = 47.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -132,7 +132,7 @@ margin/left = 95.0
 margin/top = 23.0
 margin/right = 191.0
 margin/bottom = 47.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.487061, 0.875, 0.0991211, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -152,7 +152,7 @@ margin/left = 791.0
 margin/top = -1.0
 margin/right = 887.0
 margin/bottom = 23.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -172,7 +172,7 @@ margin/left = 887.0
 margin/top = -1.0
 margin/right = 983.0
 margin/bottom = 23.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.703125, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -212,7 +212,7 @@ transform/pos = Vector2( 122.094, 60.2935 )
 
 transform/pos = Vector2( 79.9999, 33 )
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 88.0001, 135 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -223,7 +223,7 @@ angular_damp = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOne"]
 
 transform/pos = Vector2( 88.0001, 135 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
