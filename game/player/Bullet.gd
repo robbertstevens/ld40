@@ -8,7 +8,7 @@ var speed = 1000 #speed of the bullet
 var direction = Vector2()
 var target = Vector2()
 var motion = Vector2()
-var max_damage = 100
+var max_damage = 1000000
 
 
 
@@ -17,7 +17,8 @@ func _ready():
 	target =  - get_pos()
 	
 func _process(delta):
-	motion = direction * speed * delta
+	motion = direction.normalized() * speed * delta
+	rotate(atan2(direction.x, direction.y))
 	move(motion)
 	
 	if is_colliding():

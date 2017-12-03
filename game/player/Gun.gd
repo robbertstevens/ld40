@@ -25,7 +25,7 @@ func _process(delta):
 		var player_pos = player.get_pos()
 		var direction = (get_global_pos() - player_pos)
 		
-		bullet.direction = direction.normalized()
+		bullet.direction = direction
 		bullet.set_pos(get_global_pos())
 		
 		last_shot = delay
