@@ -12,6 +12,7 @@ var healthBar
 var scoreValue
 var waveValue
 var nextWaveValue
+var generatorBar
 
 # wave variables
 var wave_interval = 15
@@ -22,6 +23,7 @@ func _ready():
 	generator = get_node("Navigation/Generator")
 	player = get_tree().get_root().get_node("Level/Player")
 	
+	generatorBar = get_tree().get_root().get_node("Level/Ui/GeneratorBar")
 	ammoValue = get_tree().get_root().get_node("Level/Ui/AmmoValueLabel")
 	healthBar = get_tree().get_root().get_node("Level/Ui/HealthBar")
 	scoreValue = get_tree().get_root().get_node("Level/Ui/ScoreValueLabel")
@@ -44,6 +46,8 @@ func _process(delta):
 	scoreValue.set_text(str(player.score))
 	# wave update
 	waveValue.set_text(str(wave_number))
+	# gen update
+	generatorBar.set_value(generator.health)
 	
 	last_wave_spawn -= delta
 	if last_wave_spawn < 0:
