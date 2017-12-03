@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://level/Ui.gd" type="Script" id=1]
 [ext_resource path="res://level/assets/SPACEMAN.TTF" type="DynamicFontData" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://UI/StreamPlayer.gd" type="Script" id=4]
 [ext_resource path="res://player/assets/crosshair.png" type="Texture" id=5]
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=1]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -39,7 +39,7 @@ font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -52,21 +52,28 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 
 font/size = 16
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 
 font/size = 100
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
 
 font/size = 16
 font/use_mipmaps = false
@@ -94,7 +101,7 @@ margin/left = -1.0
 margin/top = -1.0
 margin/right = 119.0
 margin/bottom = 23.0
-custom_styles/fg = SubResource( 6 )
+custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 range/min = 0.0
 range/max = 100.0
@@ -136,7 +143,7 @@ margin/left = -1.0
 margin/top = 23.0
 margin/right = 119.0
 margin/bottom = 47.0
-custom_styles/fg = SubResource( 1 )
+custom_styles/fg = SubResource( 4 )
 custom_styles/bg = SubResource( 2 )
 range/min = 0.0
 range/max = 1000.0
@@ -176,7 +183,7 @@ margin/left = -1.0
 margin/top = 47.0
 margin/right = 95.0
 margin/bottom = 71.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -196,7 +203,7 @@ margin/left = 55.0
 margin/top = 47.0
 margin/right = 175.0
 margin/bottom = 71.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.487061, 0.875, 0.0991211, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -216,7 +223,7 @@ margin/left = -1.0
 margin/top = 71.0
 margin/right = 95.0
 margin/bottom = 95.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -236,7 +243,7 @@ margin/left = 55.0
 margin/top = 71.0
 margin/right = 151.0
 margin/bottom = 95.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0.703125, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -256,7 +263,7 @@ margin/left = -1.0
 margin/top = 95.0
 margin/right = 95.0
 margin/bottom = 119.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -276,7 +283,7 @@ margin/left = 55.0
 margin/top = 95.0
 margin/right = 151.0
 margin/bottom = 119.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.374496, 0.383476, 0.949219, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -296,7 +303,7 @@ margin/left = -1.0
 margin/top = 119.0
 margin/right = 95.0
 margin/bottom = 143.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -316,7 +323,7 @@ margin/left = 95.0
 margin/top = 119.0
 margin/right = 191.0
 margin/bottom = 143.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.03125, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -336,7 +343,7 @@ margin/left = 167.0
 margin/top = -25.0
 margin/right = 971.0
 margin/bottom = 150.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "pause"
@@ -371,7 +378,7 @@ margin/left = 80.2681
 margin/top = -26.5852
 margin/right = 1024.2
 margin/bottom = 146.756
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Game over"
@@ -385,10 +392,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 161.0
+margin/left = 162.0
 margin/top = 122.0
-margin/right = 297.0
+margin/right = 298.0
 margin/bottom = 160.0
+custom_fonts/font = SubResource( 8 )
 syntax_highlighting = false
 show_line_numbers = false
 highlight_all_occurrences = false
@@ -407,7 +415,7 @@ margin/left = 297.0
 margin/top = 122.0
 margin/right = 389.0
 margin/bottom = 160.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -419,5 +427,7 @@ flat = false
 transform/pos = Vector2( -288, 48 )
 texture = ExtResource( 5 )
 offset = Vector2( -24, -24 )
+
+[connection signal="pressed" from="game_over/Button" to="." method="_on_Button_pressed"]
 
 
