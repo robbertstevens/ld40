@@ -16,7 +16,7 @@ var speed = Vector2()
 var velocity = Vector2()
 
 var ammo = 500
-var health = 99
+var health = 100
 var score = 0
 
 func _ready():
