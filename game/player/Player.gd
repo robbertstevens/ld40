@@ -25,7 +25,9 @@ func _ready():
 	
 func _process(delta):
 	if (health < 0):
-		get_tree().reload_current_scene()
+		get_tree().get_root().get_node("Level/Ui").game_over()
+		get_tree().set_pause(true)
+		# get_tree().reload_current_scene()
 	
 	# X movement
 	if input_x_direction:
