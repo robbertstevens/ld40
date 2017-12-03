@@ -24,7 +24,7 @@ func _process(delta):
 		speed = 2
 	
 	if Input.is_key_pressed(KEY_Q):
-		speed = 1000	
+		speed = 1000
 	
 	if not has_ammo && shoot && Input.is_mouse_button_pressed(BUTTON_LEFT):
 		last_shot = delay
@@ -36,6 +36,7 @@ func _process(delta):
 		var bullet = bullet_scene.instance()
 		var player_pos = player.get_pos()
 		var direction = (get_global_pos() - player_pos)
+		bullet.max_damage = player.max_damage
 		bullet.direction = direction
 		bullet.speed = speed
 		bullet.set_pos(get_global_pos())

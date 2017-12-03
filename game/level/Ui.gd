@@ -2,16 +2,24 @@ extends CanvasLayer
 
 var pause_label
 var game_over_label
+var crosshair
 
 var game_running = false
 
 func _ready():
 	pause_label = get_node("pause")
 	game_over_label = get_node("game_over")
+	crosshair = get_node("Crosshair")
 	pause_label.set_opacity(0)
 	game_over_label.set_opacity(0)
 	set_process_input(true)
-	
+	set_process(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func _process(delta):
+	var mouse = get_viewport().get_mouse_pos()
+	crosshair.set_pos(mouse)
+
 func _input(event):
 	if event.is_action_pressed("key_exit"):
 		get_tree().quit()

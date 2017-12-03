@@ -17,6 +17,8 @@ extents = Vector2( 24, 24 )
 
 [node name="Tiles" type="Node2D"]
 
+z/z = -3
+
 [node name="floor" type="Sprite" parent="."]
 
 transform/pos = Vector2( 48, -48 )
