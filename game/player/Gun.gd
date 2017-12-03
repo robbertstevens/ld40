@@ -5,11 +5,16 @@ onready var bullet_scene = preload("res://player/Bullet.tscn")
 var delay = .1 # secconds
 var last_shot = 0
 var speed = 1000
+var player
+var animation
+
 func _ready():
+	player = get_tree().get_root().get_node("Level/Player")
+	animation = player.get_node("Animation")
+	
 	set_process(true)
 	
 func _process(delta):
-	var player = get_tree().get_root().get_node("Level/Player")
 	
 	last_shot -= delta
 	var shoot = last_shot <= 0
@@ -27,6 +32,7 @@ func _process(delta):
 		return
 	
 	if shoot && Input.is_mouse_button_pressed(BUTTON_LEFT):
+		animation.play("fire")
 		var bullet = bullet_scene.instance()
 		var player_pos = player.get_pos()
 		var direction = (get_global_pos() - player_pos)
