@@ -29,6 +29,7 @@ func _ready():
 func _fixed_process(delta):
 	if (health <= 0):
 		if (!lootbox_spawned):
+			player.score += damage
 			lootbox_spawned = true
 			var lootbox = lootbox_scene.instance()
 			lootbox.set_global_pos(get_global_pos())

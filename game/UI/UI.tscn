@@ -128,9 +128,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 95.0
+margin/left = 55.0
 margin/top = 23.0
-margin/right = 191.0
+margin/right = 175.0
 margin/bottom = 47.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.487061, 0.875, 0.0991211, 1 )
@@ -168,12 +168,92 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 95.0
+margin/left = 55.0
 margin/top = 47.0
-margin/right = 191.0
+margin/right = 151.0
 margin/bottom = 71.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.703125, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "10"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="WaveLabel" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -1.0
+margin/top = 71.0
+margin/right = 95.0
+margin/bottom = 95.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Wave:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="WaveValueLabel" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 55.0
+margin/top = 71.0
+margin/right = 151.0
+margin/bottom = 95.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.374496, 0.383476, 0.949219, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "10"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="NextWaveLabel" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -1.0
+margin/top = 95.0
+margin/right = 95.0
+margin/bottom = 119.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.808594, 0.808594, 0.808594, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Next wave:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="NextWaveValueLabel" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 95.0
+margin/top = 95.0
+margin/right = 191.0
+margin/bottom = 119.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.03125, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "10"
