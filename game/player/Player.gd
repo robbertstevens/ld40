@@ -15,7 +15,7 @@ const DECELERATION = 5000
 var speed = Vector2()
 var velocity = Vector2()
 
-var ammo = 500
+var ammo = 50
 var health = 100
 var score = 0
 
@@ -78,3 +78,6 @@ func _process(delta):
 	var mouse_pos = get_local_mouse_pos()
 	var angle = atan2(mouse_pos.x, mouse_pos.y)
 	sprite_node.set_rot(angle)
+	
+	#if speed.length() > 0: 
+	#	get_node("SamplePlayer").play("footsteps")

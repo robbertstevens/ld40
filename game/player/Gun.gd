@@ -2,7 +2,7 @@ extends Node2D
 
 onready var bullet_scene = preload("res://player/Bullet.tscn")
 
-var delay = .015 # secconds
+var delay = .1 # secconds
 var last_shot = 0
 
 func _ready():
