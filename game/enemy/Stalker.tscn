@@ -9,6 +9,8 @@ shader/shading_mode = 0
 
 [node name="Enemy" instance=ExtResource( 1 )]
 
+z/z = 2
+
 [node name="Sprite" parent="."]
 
 material/material = SubResource( 1 )
