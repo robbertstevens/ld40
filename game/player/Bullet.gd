@@ -4,21 +4,18 @@ extends KinematicBody2D
 # var a = 2
 # var b = "textvar"
 
-var speed = 1000 #speed of the bullet
+var speed = 20 #speed of the bullet
 var direction = Vector2()
 var target = Vector2()
 var motion = Vector2()
 var max_damage = 100
 
-
-
 func _ready():
 	set_process(true)
-	target =  - get_pos()
 	
 func _process(delta):
 	motion = direction.normalized() * speed * delta
-	rotate(atan2(direction.x, direction.y))
+	set_global_rotd(direction.angle())
 	move(motion)
 	
 	if is_colliding():
@@ -29,7 +26,12 @@ func _process(delta):
 			
 		if not collider.is_in_group("player"):
 			queue_free()
-			
+	
+	if Input.is_key_pressed(KEY_E):
+		speed = 2
+	
+	if Input.is_key_pressed(KEY_Q):
+		speed = 1000	
 func get_damage():
 	var ammo = get_tree().get_root().get_node("Level/Player").ammo
 	var dmg = max_damage - ammo
