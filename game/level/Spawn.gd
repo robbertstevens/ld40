@@ -39,7 +39,6 @@ func spawn_enemies(to_spawn_point, wave_number):
 	
 func _spawn_enemy():
 	var ran = round(rand_range(0,3))
-	print(ran)
 	var enemy = enemy_scene.instance()
 	if ran == 0:
 		enemy = enemy_scene.instance()

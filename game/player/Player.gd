@@ -75,7 +75,7 @@ func _process(delta):
 		animation.play("walk")
 	if not (input_x_direction or input_y_direction):
 		animation.stop()
-	
+ 
 	if is_colliding():
 		var normal = get_collision_normal()
 		var final_movement = normal.slide(movement_remainder)
