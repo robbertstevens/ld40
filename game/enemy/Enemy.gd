@@ -40,6 +40,10 @@ func _fixed_process(delta):
 		player.health -= get_damage()
 		last_shot = delay
 	
+	if ((generator.get_pos() - get_pos()).length() < 100 && last_shot <= 0):
+		generator.add_damage(20)
+		last_shot = delay
+	
 	if !chasing && (get_pos() - player.get_pos()).length() < 200:
 		chasing = true
 	elif chasing && (get_pos() - player.get_pos()).length() > 400:
