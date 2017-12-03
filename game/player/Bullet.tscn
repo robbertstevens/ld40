@@ -10,7 +10,6 @@ radius = 10.0
 
 [node name="Bullet" type="KinematicBody2D"]
 
-transform/scale = Vector2( 0.5, 0.5 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -22,7 +21,7 @@ script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/scale = Vector2( 0.3, 0.3 )
+transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

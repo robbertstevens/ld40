@@ -32,7 +32,7 @@ func _process(delta):
 		return
 	
 	if shoot && Input.is_mouse_button_pressed(BUTTON_LEFT):
-		animation.play("fire")
+		#animation.play("fire")
 		var bullet = bullet_scene.instance()
 		var player_pos = player.get_pos()
 		var direction = (get_global_pos() - player_pos)
