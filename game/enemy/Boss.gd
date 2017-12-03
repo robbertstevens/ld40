@@ -6,5 +6,4 @@ func _ready():
 
 func _fixed_process(delta):
 	._fixed_process(delta)
-	print(health)
 	
