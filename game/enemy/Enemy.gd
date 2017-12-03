@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var path = []
-var speed = 100
+var speed = 150
 var sprite_node
 var health = 100
 var damage = 5
