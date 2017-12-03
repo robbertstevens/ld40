@@ -41,14 +41,14 @@ func spawn_enemies(to_spawn_point, wave_number):
 	#active_sounds.append(sounds.play("portalopen"))
 	
 func _spawn_enemy():
-	var ran = round(rand_range(0,3))
+	var ran = round(rand_range(0,20))
 	var enemy = enemy_scene.instance()
-	if ran == 0:
+	if ran < 15:
 		enemy = enemy_scene.instance()
-	elif ran == 1:
-		enemy = boss_scene.instance()
-	elif ran == 2:
+	elif ran < 18:
 		enemy = stalker.instance()
+	elif ran < 20:
+		enemy = boss_scene.instance()
 		
 	enemy.health *= pow(difficulty_modifier, difficulty)
 	enemy.set_pos(get_global_pos())

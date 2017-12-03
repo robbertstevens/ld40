@@ -2,12 +2,15 @@ extends "Enemy.gd"
 
 onready var fire = preload("res://enemy/FireDrop.tscn")
 
-var drop_interval = .5
+var drop_interval = 1
 var last_drop = 0
-
+var speech_delay = 10
+var last_time_spoken = 0
 func _ready():
 	speed = 50
 	health = 250
+	
+	get_node("SamplePlayer").play("iwillgetyou");
 	._ready()
 
 func _fixed_process(delta):
@@ -22,12 +25,13 @@ func _fixed_process(delta):
 		last_drop = drop_interval
 		
 		get_tree().get_root().add_child(drop)
-
+	last_time_spoken -= delta
+		
 func has_near_fire():
 	var fires = get_tree().get_nodes_in_group("fire")
 	
 	for fire in fires:
-		if (get_pos() - fire.get_pos()).length() < 5:
+		if (get_pos() - fire.get_pos()).length() < 48:
 			return true
 	
 	return false
