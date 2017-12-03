@@ -15,6 +15,7 @@ outlines = [ Vector2Array( 1056, 288, 1056, 192, 1680, 192, 1680, 528, 2688, 528
 
 [node name="Level" type="Node2D"]
 
+editor/display_folded = true
 script/script = ExtResource( 1 )
 
 [node name="Navigation" type="Navigation2D" parent="."]
