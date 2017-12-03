@@ -13,12 +13,12 @@ var lootbox_scene = preload("res://lootbox/Lootbox.tscn")
 var lootbox_spawned = false
 
 func _ready():
-	set_process(true)
+	set_fixed_process(true)
 	sprite_node = get_node("Sprite")
 	player = get_tree().get_root().get_node("Level/Player")
 	navigation = get_tree().get_root().get_node("Level/Navigation")
 
-func _process(delta):
+func _fixed_process(delta):
 	
 	if (health <= 0):
 		if (!lootbox_spawned):
