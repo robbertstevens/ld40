@@ -5,12 +5,15 @@ var start_time
 var time_elapsed
 var spawns
 var generator
+var ui
 
 var max_enemy_count = 3
 var enemy_spawn_rate = 3
 
 func _ready():
 	generator = get_node("Navigation/Generator")
+	ui = get_node("Ui")
+	ui.game_running = true
 	set_process(true)
 	start_time = OS.get_unix_time()
 
@@ -20,19 +23,17 @@ func _ready():
 
 func _process(delta):
 	time_elapsed = OS.get_unix_time()
-	if Input.is_action_pressed("key_exit"):
-		get_tree().quit()
 		
 	# Healt update
 	var player = get_tree().get_root().get_node("Level/Player")
-	var healthBar = get_tree().get_root().get_node("Level/UI/HealthBar")
+	var healthBar = get_tree().get_root().get_node("Level/Ui/HealthBar")
 	
 	healthBar.set_value(player.health)
 	
 	# Ammo update
-	var ammoValue = get_tree().get_root().get_node("Level/UI/AmmoValueLabel")
+	var ammoValue = get_tree().get_root().get_node("Level/Ui/AmmoValueLabel")
 	ammoValue.set_text(str(player.ammo))
 	
 	# Score update
-	var scoreValue = get_tree().get_root().get_node("Level/UI/ScoreValueLabel")
+	var scoreValue = get_tree().get_root().get_node("Level/Ui/ScoreValueLabel")
 	scoreValue.set_text(str(player.score))
