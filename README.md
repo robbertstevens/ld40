@@ -4,6 +4,11 @@ This is our entry for Ludum Dare 40. The theme this time was: "The more you have
 `w` `a` `s` `d` movement
 
 `left mouse` shoot
+
+`enter` restart when dead
+
+`pause` pause button
+
  
 # What to do?
 Shoot everything that moves, protect ur generator, always increasing waves of enemies. 
