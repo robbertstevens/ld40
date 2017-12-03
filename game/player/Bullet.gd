@@ -8,7 +8,7 @@ var speed = 1000 #speed of the bullet
 var direction = Vector2()
 var target = Vector2()
 var motion = Vector2()
-var damage = 5
+var max_damage = 100
 
 
 
@@ -24,8 +24,13 @@ func _process(delta):
 		var collider = get_collider()
 		
 		if collider.is_in_group("enemy"):
-			collider.health -= damage
+			collider.health -= get_damage()
 			
 		if not collider.is_in_group("player"):
 			queue_free()
-		
+			
+func get_damage():
+	var ammo = get_tree().get_root().get_node("Level/Player").ammo
+	var dmg = max_damage - ammo
+	dmg = clamp(dmg, 1, 100)
+	return dmg;

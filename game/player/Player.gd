@@ -15,7 +15,7 @@ const DECELERATION = 5000
 var speed = Vector2()
 var velocity = Vector2()
 
-var ammo = 10
+var ammo = 500
 var health = 99
 var score = 0
 

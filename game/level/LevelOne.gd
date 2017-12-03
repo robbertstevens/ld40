@@ -3,29 +3,20 @@ extends Node2D
 var currentRoom
 var start_time
 var time_elapsed
+var spawns
+var generator
 
 var max_enemy_count = 3
 var enemy_spawn_rate = 3
 
-var enemy_scene = preload("res://enemy/Enemy.tscn")
-var boss_scene = preload("res://enemy/Boss.tscn")
-
 func _ready():
+	generator = get_node("Navigation/Generator")
 	set_process(true)
 	start_time = OS.get_unix_time()
-	
-	for room in get_tree().get_nodes_in_group("room"):
-		room.connect("body_enter", self, "_enter_roomOne", [room])
-	
-	for spawn in get_tree().get_nodes_in_group("spawn"):
-		var enemy;
-		if rand_range(0,1) == 1:
-			enemy = enemy_scene.instance()
-		else:
-			enemy = boss_scene.instance()
-			
-		enemy.set_pos(spawn.get_global_pos())
-		get_tree().get_root().get_node("Level").add_child(enemy)
+
+	spawns = get_tree().get_nodes_in_group("spawn")
+	for spawn in spawns:
+		spawn.spawn_enemies(generator.get_global_pos(), 2, 1)
 
 func _process(delta):
 	time_elapsed = OS.get_unix_time()
@@ -45,9 +36,3 @@ func _process(delta):
 	# Score update
 	var scoreValue = get_tree().get_root().get_node("Level/UI/ScoreValueLabel")
 	scoreValue.set_text(str(player.score))
-	
-	
-
-func _enter_roomOne(body, room):
-	if body.is_in_group("player"):
-		currentRoom = room
