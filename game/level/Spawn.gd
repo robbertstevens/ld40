@@ -2,6 +2,7 @@ extends Node2D
 
 var enemy_scene = preload("res://enemy/Enemy.tscn")
 var boss_scene = preload("res://enemy/Boss.tscn")
+var stalker = preload("res://enemy/Stalker.tscn")
 
 var spawn_enemy_count = 0
 var difficulty = 1
@@ -37,7 +38,16 @@ func spawn_enemies(to_spawn_point, wave_number):
 	sounds.play("portalopen")
 	
 func _spawn_enemy():
+	var ran = round(rand_range(0,3))
+	print(ran)
 	var enemy = enemy_scene.instance()
+	if ran == 0:
+		enemy = enemy_scene.instance()
+	elif ran == 1:
+		enemy = boss_scene.instance()
+	elif ran == 2:
+		enemy = stalker.instance()
+		
 	enemy.health *= pow(difficulty_modifier, difficulty)
 	enemy.set_pos(get_global_pos())
 	get_tree().get_root().get_node("Level").add_child(enemy)

@@ -7,7 +7,7 @@ var generator
 var ui
 
 # wave variables
-var wave_interval = 5
+var wave_interval = 10
 var wave_number = 1
 var last_wave_spawn = 0
 
