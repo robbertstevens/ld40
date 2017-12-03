@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 24.0616, 24.1677 )
+extents = Vector2( 12.2715, 11.804 )
 
 [node name="Lootbox" type="StaticBody2D" groups=[
 "ammo",
