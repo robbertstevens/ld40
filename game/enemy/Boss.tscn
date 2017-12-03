@@ -22,6 +22,7 @@ samples/iwillgetyou = {
 "enemy",
 ]]
 
+z/z = 2
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.57976, 0, 0, 4.05987, 0.0871162, -0.273375 )
