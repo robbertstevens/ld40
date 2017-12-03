@@ -13,16 +13,19 @@ var count_down_timer
 var animation
 var sounds
 
+var active_sounds = []
+
 func _ready():
 	set_process(true)
 	count_down_timer = get_node("Timer")
 	animation = get_node("Animation")
 	sounds = get_node("Sounds")
 	count_down_timer.connect("timeout", self, "_spawn_enemy")
+	active_sounds.append(sounds.play("portalactive"))
 
 func _process(delta):
-	if !sounds.is_voice_active(0) and !sounds.is_voice_active(2) and spawn_enemy_count:
-		sounds.play("portalactive")
+	if (!sounds.is_voice_active(active_sounds[0]) && spawn_enemy_count):
+		active_sounds[0] = sounds.play("portalactive")
 
 func spawn_enemies(to_spawn_point, wave_number):
 	spawn_enemy_count = floor(wave_number * difficulty_modifier)
@@ -35,7 +38,7 @@ func spawn_enemies(to_spawn_point, wave_number):
 	
 	# Start portal animation
 	animation.play("fade")
-	sounds.play("portalopen")
+	#active_sounds.append(sounds.play("portalopen"))
 	
 func _spawn_enemy():
 	var ran = round(rand_range(0,3))
