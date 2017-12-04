@@ -36,5 +36,5 @@ func _process(delta):
 func get_damage():
 	var ammo = get_tree().get_root().get_node("Level/Player").ammo
 	var dmg = max_damage - ammo
-	dmg = clamp(dmg, 1, max_damage)
+	dmg = clamp(dmg, 10, max_damage)
 	return dmg;

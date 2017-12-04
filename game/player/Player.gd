@@ -19,7 +19,7 @@ var velocity = Vector2()
 var ammo = 50
 var health = 100
 var score = 0
-var max_damage = 100
+var max_damage = 125
 
 func _ready():
 	set_process(true)
