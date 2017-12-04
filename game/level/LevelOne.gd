@@ -54,8 +54,8 @@ func _process(delta):
 	
 	last_wave_spawn -= delta
 	if last_wave_spawn < 0:
-		if wave_number % 4 == 0:
-			player.max_damage *= 1.2
+		#if wave_number % 4 == 0:
+		#	player.max_damage *= 1.2
 		player.score += wave_number * 100
 		wave_number += 1
 		last_wave_spawn = wave_interval
