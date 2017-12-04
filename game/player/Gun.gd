@@ -39,6 +39,7 @@ func _process(delta):
 		bullet.max_damage = player.max_damage
 		bullet.direction = direction
 		bullet.speed = speed
+		bullet.ammo = player.ammo
 		bullet.set_pos(get_global_pos())
 		
 		last_shot = delay

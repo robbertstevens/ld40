@@ -9,6 +9,7 @@ var direction = Vector2()
 var target = Vector2()
 var motion = Vector2()
 var max_damage = 100
+var ammo
 
 func _ready():
 	set_rot(direction.angle() + PI / 2)
@@ -34,7 +35,6 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_Q):
 		speed = 1000	
 func get_damage():
-	var ammo = get_tree().get_root().get_node("Level/Player").ammo
 	var dmg = max_damage - ammo
 	dmg = clamp(dmg, 10, max_damage)
 	return dmg;

@@ -45,13 +45,13 @@ func _spawn_enemy():
 	var enemy = enemy_scene.instance()
 	if ran < 15:
 		enemy = enemy_scene.instance()
-		enemy.health *= clamp(pow(difficulty_modifier, difficulty), 10, 200)
+		enemy.health = clamp(enemy.health * pow(difficulty_modifier, difficulty), 10, 200)
 	elif ran < 18:
 		enemy = stalker.instance()
-		enemy.health *= clamp(pow(difficulty_modifier, difficulty), 10, 150)
+		enemy.health = clamp(enemy.health * pow(difficulty_modifier, difficulty), 10, 150)
 	elif ran < 20:
 		enemy = boss_scene.instance()
-		enemy.health *= clamp(pow(difficulty_modifier, difficulty), 10, 350)
+		enemy.health = clamp(enemy.health * pow(difficulty_modifier, difficulty), 10, 350)
 		
 	enemy.set_pos(get_global_pos())
 	get_tree().get_root().get_node("Level").add_child(enemy)

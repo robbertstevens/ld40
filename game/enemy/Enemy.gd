@@ -79,6 +79,7 @@ func _fixed_process(delta):
 func get_damage():
 	return 5
 	
-func do_damage(damage):
-	health -= damage
+func do_damage(player_damage):
+	print("Healt: " + str(health) + "; Damage: " + str(player_damage))
+	health -= player_damage
 	healthBar.set_value(health)
