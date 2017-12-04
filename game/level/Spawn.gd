@@ -6,7 +6,7 @@ var stalker = preload("res://enemy/Stalker.tscn")
 
 var spawn_enemy_count = 0
 var difficulty = 1
-var difficulty_modifier = 1.2
+var difficulty_modifier = 1.1
 var to_spawn_point = Vector2()
 
 var count_down_timer
@@ -28,7 +28,7 @@ func _process(delta):
 		active_sounds[0] = sounds.play("portalactive")
 
 func spawn_enemies(to_spawn_point, wave_number):
-	spawn_enemy_count = clamp(floor(wave_number * difficulty_modifier), 0, 10)
+	spawn_enemy_count = clamp(floor(wave_number * difficulty_modifier), 1, 7)
 	difficulty = wave_number
 	
 	# start timer to spawn enemy
@@ -45,12 +45,14 @@ func _spawn_enemy():
 	var enemy = enemy_scene.instance()
 	if ran < 15:
 		enemy = enemy_scene.instance()
+		enemy.health *= clamp(pow(difficulty_modifier, difficulty), 10, 200)
 	elif ran < 18:
 		enemy = stalker.instance()
+		enemy.health *= clamp(pow(difficulty_modifier, difficulty), 10, 150)
 	elif ran < 20:
 		enemy = boss_scene.instance()
+		enemy.health *= clamp(pow(difficulty_modifier, difficulty), 10, 350)
 		
-	enemy.health *= pow(difficulty_modifier, difficulty)
 	enemy.set_pos(get_global_pos())
 	get_tree().get_root().get_node("Level").add_child(enemy)
 	spawn_enemy_count -= 1

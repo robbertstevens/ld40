@@ -13,9 +13,10 @@ var scoreValue
 var waveValue
 var nextWaveValue
 var generatorBar
+var generator_pos
 
 # wave variables
-var wave_interval = 15
+var wave_interval = 20
 var wave_number = 0
 var last_wave_spawn = 0
 
@@ -29,6 +30,8 @@ func _ready():
 	scoreValue = get_tree().get_root().get_node("Level/Ui/ScoreValueLabel")
 	waveValue = get_tree().get_root().get_node("Level/Ui/WaveValueLabel")
 	nextWaveValue = get_tree().get_root().get_node("Level/Ui/NextWaveValueLabel")
+	spawns = get_tree().get_nodes_in_group("spawn")
+	generator_pos = generator.get_global_pos()
 	
 	ui = get_node("Ui")
 	ui.game_running = true
@@ -62,6 +65,5 @@ func _process(delta):
 	nextWaveValue.set_text(str(ceil(last_wave_spawn)))
 	
 func spawn_waves():
-	spawns = get_tree().get_nodes_in_group("spawn")
 	for spawn in spawns:
-		spawn.spawn_enemies(generator.get_global_pos(), wave_number)
+		spawn.spawn_enemies(generator_pos, wave_number)
