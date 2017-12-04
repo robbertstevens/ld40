@@ -23,7 +23,7 @@ func _process(delta):
 		var collider = get_collider()
 		
 		if collider.is_in_group("enemy"):
-			collider.health -= get_damage()
+			collider.do_damage(get_damage())
 			
 		if not collider.is_in_group("player"):
 			queue_free()

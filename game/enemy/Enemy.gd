@@ -14,17 +14,21 @@ var lootbox_scene = preload("res://lootbox/Lootbox.tscn")
 var lootbox_spawned = false
 var target
 var chasing
+var healthBar
 
 
 func _ready():
 	set_fixed_process(true)
 	sprite_node = get_node("Sprite")
+	healthBar = get_node("Sprite/HealthBar")
 	player = get_tree().get_root().get_node("Level/Player")
 	navigation = get_tree().get_root().get_node("Level/Navigation")
 	generator = navigation.get_node("Generator")
 	path = navigation.get_simple_path(get_global_pos(), generator.get_global_pos(), true)
 	target = 0
 	chasing = false
+	healthBar.set_max(health)
+	healthBar.set_value(health)
 
 func _fixed_process(delta):
 	if (health <= 0):
@@ -74,3 +78,7 @@ func _fixed_process(delta):
 		
 func get_damage():
 	return 5
+	
+func do_damage(damage):
+	health -= damage
+	healthBar.set_value(health)
